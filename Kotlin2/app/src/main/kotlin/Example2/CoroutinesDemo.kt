@@ -45,7 +45,7 @@ fun testCoroutine1() {
 
 
 //runBlocking will allow us to use Suspend in all the function. Like a coroutine wrapper.
-// Very useful in unit tests.
+// Very useful in unit tests also.
 
 fun testCoroutine2() = runBlocking {
 
@@ -91,7 +91,7 @@ fun testCoroutine3() = runBlocking {
     println("FINAL RESULT $num")
 }
 
-// 1) notice what would happen if you do not launch it as a coroutine. Note the Button UI. (using delay wil lreport back to the UI)
+// 1) notice what would happen if you do not launch it as a coroutine. Note the Button UI. (using delay will report back to the UI)
 // 2) try it with 100_000 instead
 // 3) try it with threads instead
 // 4) Notice the race condition
@@ -245,7 +245,7 @@ fun testCoroutine9() = runBlocking {
 // async returns a "Deferred" instead of a Job (returned by launch)
 // "Deferred" is like a job but a future job. Like a promise.
 // In our example. It will execute directly.
-// Use await() on a deffered value to get its result.
+// Use await() on a deferred value to get its result.
 // Note that measureTimeMillis does not imply a coroutine
 
 // 1) try using CoroutineStart.LAZY in the async() call
@@ -318,8 +318,7 @@ fun testContextDispatcher()  = runBlocking {
 
 // What will happen if you call .join() on the UI?
 // Can combine context by using the + sign (Non Cancelable).
-// If one of the context is canceled, the coroutine is canceled. Can create an empty job to control the cancellation     explicitly.
-// Not pat of this scope, but quick
+// If one of the context is canceled, the coroutine is canceled. Can create an empty job to control the cancellation explicitly.
 
 
 
